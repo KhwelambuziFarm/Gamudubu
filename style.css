@@ -1,0 +1,544 @@
+ /* Basic resets and layout */
+ body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #121111, #e0e0e0); /* Subtle gradient */
+    color: #333;
+    
+}
+
+/* Logo and Menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #32a852; /* Use your logo's color here */
+    padding: 10px 20px;
+    flex-wrap: wrap; /* Allow menu to wrap on small screens */
+    color:white;
+}
+
+
+.logo {
+    width: 105px;
+    height: 100px;
+    border-radius: 50%;
+    background: #b4e997; /* Add your logo image here */
+    display: inline-block;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow the menu items to wrap */
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Optional hover effect */
+}
+
+/* Section styles */
+section {
+    padding: 40px 20px; /* Reduced padding */
+    text-align: center;
+    background-color: #ffffff; /* Add contrast between sections */
+    border-bottom: 1px solid #e0e0e0; /* Optional divider */
+    min-height: 60vh; /* Ensures sections fill enough space */
+}
+ 
+/* Styling for the "Our Products" and "Our Services" headings */
+#products h2, #services h2 {
+ font-size: 2.5rem; /* Large and bold */
+ font-weight: bold;
+ color: #2A8C4B; /* Matches the logo color */
+ text-transform: uppercase; /* Makes text more striking */
+ text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+ margin: 20px 0; /* Space around the heading */
+ border-bottom: 4px solid #2A8C4B; /* Decorative underline */
+ display: inline-block; /* Keeps the underline short */
+ padding-bottom: 10px; /* Space between text and underline */
+ letter-spacing: 2px; /* Enhances readability */
+ text-align: center;
+}
+
+/* Optional: Styling the divs under the headings */
+.product-category, .service-category {
+padding: 20px;
+margin-top: 10px;
+background-color: #f9f9f9; /* Light background for separation */
+border: 1px solid #ddd; /* Subtle border for definition */
+border-radius: 8px; /* Rounded corners */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds depth */
+}
+#home {
+   background-image: url('images/background.png'); /* Corrected image path */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 90vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 20px;
+   background-color: lightblue;
+   
+}
+
+
+
+
+ /* Container for Products and Services */
+.product-container, .service-container {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 30px;
+padding: 10px;
+border: 2px solid #ccc;
+border-radius: 10px;
+background-color: #f8f8f8; /* Light background for the container */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow effect */
+}
+
+.product-images, .service-images {
+display: grid;
+grid-template-columns: repeat(5, 1fr); /* Five images per row */
+gap: 15px;
+justify-items: center;
+padding: 10px;
+}
+
+.product-images img, .service-images img {
+width: 350px; /* Default image width */
+height: 250px; /* Default image height */
+object-fit: cover; /* Ensures the images maintain aspect ratio */
+border-radius: 8px;
+transition: transform 0.3s ease;
+}
+
+.product-images img:hover, .service-images img:hover {
+transform: scale(1.1); /* Enlarges image on hover */
+}
+
+
+@media (max-width: 768px) {
+#products h2, #services h2 {
+font-size: 2rem; /* Slightly smaller */
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+.product-category, .service-category {
+padding: 10px;
+}
+}
+
+/* Responsive Adjustments */
+/* For medium-sized screens */
+@media screen and (max-width: 1024px) {
+.product-container, .service-container {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.product-images, .service-images {
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row on medium screens */
+}
+
+.product-images img, .service-images img {
+    width: 300px; /* Adjust width for medium screens */
+    height: 220px; /* Adjust height for medium screens */
+}
+}
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+.product-container, .service-container {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.product-images, .service-images {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on small screens */
+}
+
+.product-images img, .service-images img {
+    width: 250px; /* Adjust width for small screens */
+    height: 180px; /* Adjust height for small screens */
+}
+}
+
+/* For very small screens (e.g., phones in portrait mode) */
+@media screen and (max-width: 480px) {
+.product-container, .service-container {
+    flex-direction: column;
+    padding: 15px;
+}
+
+.product-images, .service-images {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on very small screens */
+}
+
+.product-images img, .service-images img {
+    width: 180px; /* Smaller width for very small screens */
+    height: 130px; /* Smaller height for very small screens */
+}
+}
+/* Contact form */
+form input, form textarea {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff6347;
+}
+
+/* Location Section */
+#location a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#location a:hover {
+    color: #ff6347;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Logo and Navigation adjustments for small screens */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    /* Home Section */
+    #home {
+        height: 70vh; /* Make the home section shorter on small screens */
+    }
+
+  
+    /* Product and Service Images */
+    .product-images img, .service-images img {
+        width: 120px;
+        height: 120px; /* Adjust image sizes for small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small screens (smartphones) */
+   
+    .product-images img, .service-images img {
+        width: 100px;
+        height: 100px; /* Even smaller images */
+    }
+}
+ 
+#footer {
+   background-color: darkgreen; /* Logo color */            
+   color: white; /* Text color for contrast */
+   text-align: center;
+   padding: 15px 20px;
+   font-size: 16px;
+   position: relative; /* Adjust positioning as needed */
+   bottom: 0;
+   
+}
+
+#footer .footer-container {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+max-width: 1200px;
+margin: 0 auto;
+gap: 20px;
+}
+
+#footer .footer-section {
+flex: 1 1 30%;
+margin: 10px 0;
+}
+
+#footer .footer-section h3 {
+font-size: 1.2em;
+margin-bottom: 15px;
+text-transform: uppercase;
+}
+
+#footer .footer-section p, #footer .footer-section a {
+font-size: 1em;
+color: #ccc;
+text-decoration: none;
+}
+
+#footer .footer-section a:hover {
+color: #fff;
+text-decoration: underline;
+}
+
+/* Contact Form Styles */
+#footer .contact-form form {
+display: flex;
+flex-direction: column;
+}
+
+#footer .contact-form label {
+margin-bottom: 5px;
+font-size: 1em;
+color: #fff;
+}
+
+#footer .contact-form input,
+#footer .contact-form textarea {
+width: 100%;
+margin-bottom: 15px;
+padding: 10px;
+font-size: 1em;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+#footer .contact-form button {
+background-color: #56c760;
+color: #fff;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+font-size: 1em;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+#footer .contact-form button:hover {
+background-color: #45a04a;
+}
+
+/* Social Media Icons */
+#footer .social-icons {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+#footer .social-icons a {
+text-decoration: none;
+color: white;
+font-size: 20px;
+transition: transform 0.3s ease, opacity 0.3s ease;
+
+}
+
+#footer .social-icons a:hover {
+transform: scale(1.2);
+opacity: 0.8;
+}
+/* Footer Bottom */
+#footer .footer-bottom {
+text-align: center;
+margin-top: 20px;
+border-top: 1px solid lightgreen;
+padding-top: 10px;
+font-size: 0.9em;
+}
+
+#footer .footer-container {
+display: flex;
+justify-content: space-between; /* Spread sections */
+align-items: flex-start; /* Align sections to the top */
+flex-wrap: wrap; /* Make it responsive */
+}
+
+
+#footer .footer-section {
+flex: 1; /* Allow each section to take up equal space */
+padding: 10px;
+min-width: 200px; /* Ensure proper size for small screens */
+}
+#footer .follow-us {
+text-align: left;
+}
+.footer-section a {
+text-decoration: none;
+color: #333; /* Adjust to match your theme */
+font-weight: bold;
+text-align: center;
+}
+
+.footer-section a:hover {
+color: #FF6347; /* Hover effect */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+#footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#footer .footer-section {
+    flex: 1 1 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+section {
+padding: 20px 15px;
+min-height: 50vh; /* Adjust height on small screens */
+}
+
+#home {
+height: 70vh; /* Make home section smaller on small screens */
+}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+#footer .footer-container {
+flex-direction: column; /* Stack sections vertically */
+align-items: center;
+}
+
+#footer .footer-section {
+text-align: center; /* Center all sections */
+padding: 10px 0;
+}
+
+#footer .follow-us .social-icons {
+justify-content: center; /* Center social icons on small screens */
+}
+}
+
+@media (max-width: 480px) {
+#footer .social-icons a {
+font-size: 16px; /* Reduce icon size for very small screens */
+}
+
+#footer h3 {
+font-size: 16px; /* Adjust section heading size */
+}
+
+#footer .footer-bottom {
+font-size: 12px; /* Smaller text for footer bottom */
+}
+}
+
+/* Ensure all h3 headings within product-category have the styles */
+.product-category h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    background-color: #006400; /* Match logo color */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the product section headings */
+.product-category h3:hover {
+    background-color: #008000; /* Lighter green on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adds more shadow on hover */
+}
+
+/* Styling for the service-category section titles */
+#services h3 {
+    font-size: 2em; /* Larger font size for better emphasis */
+    font-weight: bold; /* Makes the text bold */
+    color: #fff; /* White text color (you can change it to match the logo or theme color) */
+    text-transform: uppercase; /* Uppercase text to add a strong visual presence */
+    letter-spacing: 2px; /* Adds some space between letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for a 3D effect */
+    padding: 10px 0; /* Adds padding above and below the text */
+    background-color: #006400; /* Dark green background (change to match logo color) */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-align: center; /* Centers the text */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the service section headings */
+#services h3:hover {
+    background-color: #008000; /* Lighter green on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adds more shadow on hover */
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    /* For smaller screens like tablets */
+    .product-category h3 {
+        font-size: 1.5em; /* Reduce font size */
+        padding: 8px 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* For very small screens like mobile */
+    .product-category h3 {
+        font-size: 1.2em; /* Further reduce font size */
+        padding: 6px 0;
+    }
+
+    .product-category {
+        text-align: left; /* Align text to left for better readability */
+    }
+
+    .product-category h3 {
+        width: auto; /* Allow heading to take up only necessary width */
+    }
+}
+
